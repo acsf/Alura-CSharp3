@@ -13,20 +13,32 @@ namespace BitBank
         {
             GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
 
-            Funcionario carlos = new Funcionario();
-            carlos.Nome = "Antonio Carlos";
-            carlos.CPF = "032.437.855.61";
+            Funcionario carlos = new Funcionario("032.437.855.61");
+            carlos.Nome = "Antonio Carlos";           
             carlos.Salario = 3300;
+            Console.WriteLine("Número do Funcionário: " + Funcionario.TotalDeFuncionarios);
+            Console.WriteLine("Salário do funcionário: " + carlos.Nome + " " + carlos.Salario);
+            Console.WriteLine("Bonificação do funcionário: " + carlos.GetBonificacao());
 
-            Diretor barbara = new Diretor();
-            barbara.Nome = "Barbara Sousa";
-            barbara.CPF = "132.847.588.63";
-            barbara.Salario = 3000;
+            Console.WriteLine("----------------------------------------");
+
+            Diretor barbara = new Diretor("132.847.588.63");
+            barbara.Nome = "Barbara Sousa";          
+            barbara.Salario = 4000;
+            Console.WriteLine("Número do Funcionário: " + Funcionario.TotalDeFuncionarios);
+            Console.WriteLine("Salário do diretor: " + barbara.Nome + " " + barbara.Salario);
+            Console.WriteLine("Bonficação do funcionário: " + barbara.GetBonificacao());
 
             gerenciador.Registrar(carlos);
             gerenciador.Registrar(barbara);
 
-            Console.WriteLine("Total de bonificações: " + gerenciador.GetTotalBonificacao());
+
+            //Console.WriteLine("Salário do funcionário: " + carlos.Nome + " " + carlos.Salario);
+            //Console.WriteLine("Bonificação do funcionário: " + carlos.GetBonificacao());
+            //Console.WriteLine("----------------------------------------");
+            //Console.WriteLine("Salário do diretor: " + barbara.Nome + " " + barbara.Salario);
+            //Console.WriteLine("Bonficação do funcionário: " + barbara.GetBonificacao());
+            //Console.WriteLine("Total de bonificações: " + gerenciador.GetTotalBonificacao());
             Console.ReadKey();
         }
     }
