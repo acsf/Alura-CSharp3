@@ -8,9 +8,14 @@ namespace BitBank.Funcionarios
 {
     public class Diretor : Funcionario
     {
-        public Diretor(string cpf) : base(cpf)
+        public Diretor(string cpf) : base(4000, cpf)
         {
             Console.WriteLine("Criando DIRETOR");
+        }
+
+        public override void AumentarSalario()
+        {
+            Salario *= 1.15;
         }
 
         public override double GetBonificacao()
