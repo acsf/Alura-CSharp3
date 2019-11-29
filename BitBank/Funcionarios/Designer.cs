@@ -10,7 +10,7 @@ namespace BitBank.Funcionarios
     {
         public Designer(string cpf) : base(3000, cpf)
         {
-
+            Console.WriteLine("Criando DESIGNER");
         }
         public override void AumentarSalario()
         {

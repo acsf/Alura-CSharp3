@@ -6,19 +6,21 @@ using System.Threading.Tasks;
 
 namespace BitBank.Funcionarios
 {
-    public class GerenteDeConta : Funcionario
+    public class Desenvolvedor : Funcionario
     {
-        public GerenteDeConta(string cpf) : base(4000, cpf)
+        public Desenvolvedor(string cpf) : base(3000, cpf)
         {
-            Console.WriteLine("Criando GERENTE DE CONTA");
+            Console.WriteLine("Criando DESENVOLVEDOR");
         }
+
         public override void AumentarSalario()
         {
-            Salario *= 1.05;
+            Salario *= 0.15;
         }
+
         public override double GetBonificacao()
         {
-            return Salario * 0.25;
+            return Salario * 0.1;
         }
     }
 }

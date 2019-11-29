@@ -10,7 +10,7 @@ namespace BitBank.Funcionarios
     {
         public Auxiliar(string cpf) : base(2000, cpf)
         {
-
+            Console.WriteLine("Criando AUXILIAR");
         }
         public override void AumentarSalario()
         {

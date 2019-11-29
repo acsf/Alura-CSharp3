@@ -17,21 +17,15 @@ namespace BitBank.Funcionarios
         public double Salario { get; protected set; }
 
         public Funcionario(double salario, string cpf)
-        {
-            Console.WriteLine("Criando FUNCIONÁRIO");
+        {            
             CPF = cpf;
             Salario = salario;
             TotalDeFuncionarios++;
         }
+        
+        public abstract void AumentarSalario();
 
-        public virtual void AumentarSalario()
-        {
-            Salario *= 1.1;
-        }
-
-        public virtual double GetBonificacao()
-        {
-            return Salario *= 0.10;
-        }
+        public abstract double GetBonificacao();
+        
     }
 }
