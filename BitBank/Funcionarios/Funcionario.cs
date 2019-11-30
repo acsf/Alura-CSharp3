@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BitBank.Funcionarios
+﻿namespace BitBank.Funcionarios
 {
 
 
@@ -13,8 +7,8 @@ namespace BitBank.Funcionarios
         public static int TotalDeFuncionarios { get; private set; }
 
         public string Nome { get; set; }
-        public string CPF { get; private set; }
-        public double Salario { get; protected set; }
+        public string CPF { get;  private set; }
+        public double Salario { get; protected set; }       
 
         public Funcionario(double salario, string cpf)
         {            
@@ -23,6 +17,7 @@ namespace BitBank.Funcionarios
             TotalDeFuncionarios++;
         }
         
+
         public abstract void AumentarSalario();
 
         public abstract double GetBonificacao();

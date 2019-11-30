@@ -1,9 +1,6 @@
 ﻿using BitBank.Funcionarios;
+using BitBank.Sistemas;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BitBank
 {
@@ -14,12 +11,33 @@ namespace BitBank
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine("+--------------Bem vindo ao BitBank-------------+");
             Console.WriteLine("");
-     
-            CalcularBonificacao();
+
+            UsarSistema();
+            //CalcularBonificacao();
 
             Console.WriteLine("");
             Console.WriteLine("+----------Imagine Software 2019----------------+");
             Console.ReadKey();
+        }
+        public static void UsarSistema()
+        {
+            SistemaInterno sistema = new SistemaInterno();
+
+            Diretor barbara = new Diretor("13253768899")
+            {
+                Nome = "Barbara Sousa",
+                Senha = "123"                
+            };
+
+            GerenteDeConta camila = new GerenteDeConta("47854678944")
+            {
+                Nome = "Camila Andrade",
+                Senha="abc"
+            };
+            
+            sistema.Logar(barbara, "123");
+            sistema.Logar(camila, "abc");
+
         }
         public static void CalcularBonificacao()
         {
@@ -59,7 +77,7 @@ namespace BitBank
             Console.WriteLine("");
             Console.WriteLine("Total de bonificações do mês: " +
                 gerenciador.GetTotalBonificacao());
-        }      
+        }
 
     }
 }
